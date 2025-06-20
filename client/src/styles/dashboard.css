@@ -1,0 +1,243 @@
+/* src/styles/dashboard.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+}
+
+/* Logout button */
+.logout-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e53e3e;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c53030;
+}
+
+/* Dashboard Heading */
+.dashboard-heading {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #1e40af;
+    margin-bottom: 1.5rem;
+}
+
+/* Summary Cards */
+.summary-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.summary-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    min-width: 250px;
+    flex: 1;
+    text-align: center;
+    border-left: 6px solid;
+}
+
+.summary-card.income {
+    border-color: #38a169;
+}
+
+.summary-card.expense {
+    border-color: #e53e3e;
+}
+
+.summary-card.balance {
+    border-color: #3182ce;
+}
+
+.summary-card h3 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+.summary-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Add Transaction Form */
+.transaction-form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.transaction-form input,
+.transaction-form select {
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 250px;
+}
+
+.transaction-form button {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.transaction-form button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-buttons button {
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.filter-buttons button:hover {
+    transform: scale(1.05);
+}
+
+/* Table */
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.transaction-table thead {
+    background-color: #edf2f7;
+    text-transform: uppercase;
+    color: #4a5568;
+}
+
+.transaction-table th,
+.transaction-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.transaction-table td.text-right {
+    text-align: right;
+}
+
+.transaction-table td.text-center {
+    text-align: center;
+}
+
+/* Pie Chart Container */
+.chart-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Message Box */
+.message-box {
+    text-align: center;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #fef3c7;
+    border: 1px solid #fbbf24;
+    color: #92400e;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    width: fit-content;
+}
+
+/* Pie chart title */
+.pie-heading {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-buttons button {
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #ddd;
+    background-color: white;
+    color: #333;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-buttons button:hover {
+    background-color: #f0f0f0;
+}
+
+.filter-buttons .active-filter {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+.logout-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logout-button {
+    padding: 0.5rem 1.2rem;
+    background-color: #dc2626;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #b91c1c;
+}

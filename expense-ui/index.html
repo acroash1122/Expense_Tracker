@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <h1>💸 Expense Tracker</h1>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Add</a>
+            <a href="#">Transactions</a>
+            <a href="#">Analytics</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dashboard">
+            <h2>Welcome, Ash</h2>
+            <p>Your expense overview will appear here.</p>
+        </section>
+        <section id="add-transaction">
+            <h2>Add Transaction</h2>
+            <form id="transactionForm">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required />
+                </div>
+        
+                <div class="form-group">
+                    <label for="amount">Amount (Rs.)</label>
+                    <input type="number" id="amount" name="amount" required />
+                </div>
+        
+                <div class="form-group">
+                    <label for="type">Type</label>
+                    <select id="type" name="type" required>
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+                </div>
+        
+                <button type="submit">Add Transaction</button>
+            </form>
+        
+            <p id="message" style="margin-top: 10px; color: green;"></p>
+        </section>
+        <section id="summary">
+            <h2>Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-card income">
+                    <h3>Income</h3>
+                    <p id="totalIncome">Rs. 0</p>
+                </div>
+                <div class="summary-card expense">
+                    <h3>Expense</h3>
+                    <p id="totalExpense">Rs. 0</p>
+                </div>
+                <div class="summary-card balance">
+                    <h3>Balance</h3>
+                    <p id="netBalance">Rs. 0</p>
+                </div>
+            </div>
+        </section>
+        <section id="filter-section">
+            <h2>Filter Transactions</h2>
+            <div class="filter-buttons">
+                <button onclick="filterTransactions('all')">All</button>
+                <button onclick="filterTransactions('income')">Income</button>
+                <button onclick="filterTransactions('expense')">Expense</button>
+            </div>
+        </section>
+
+        <section id="transaction-list">
+            <h2>Transactions</h2>
+            <table id="transactionsTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Amount (Rs.)</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Action</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Transactions will be inserted here by JS -->
+                </tbody>
+            </table>
+        </section>
+        <section id="chart-section">
+            <h2>Spending Breakdown</h2>
+            <canvas id="categoryChart" width="400" height="200"></canvas>
+        </section>
+
+        <button onclick="logout()">Logout</button>
+        <script>
+            function logout() {
+                // clear storage and redirect *after* a short delay
+                localStorage.removeItem('userId');
+                localStorage.removeItem('token');
+
+                setTimeout(() => {
+                    window.location.href = "http://localhost:3000/login";
+                }, 100); // 100ms delay ensures logout completes
+            }
+        </script>
+
+
+    </main>
+
+    <footer>
+        <p>© 2025 Expense Tracker by Ash</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+
+</html>
