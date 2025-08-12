@@ -4,6 +4,7 @@ const cors = require('cors');
 const path = require('path');
 
 
+
 require('dotenv').config();
 
 const app = express();
@@ -27,6 +28,13 @@ const PORT = process.env.PORT || 5000;
 app.use('/dashboard', express.static(path.join(__dirname, '../expense-ui')));
 const transactionRoutes = require('./routes/transaction');
 app.use('/api/transactions', transactionRoutes);
+//add new item for deployment
+const title = process.env.SITE_TITLE || 'Default Site';
+
+app.get('/', (req, res) => {
+  res.send(`<h1>${title}</h1><p>Welcome to my app</p>`);
+});
+//ends here
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
